@@ -2,11 +2,11 @@
 
 This is a toy robot game written in Typescript as a response to a coding challenge. It allows a robot to be placed on a table at a specified origin and moved unit by unit around in different directions (North, East, South, West), without falling off of that table.
 
-The solution uses the [readline-sync](https://www.npmjs.com/package/readline-sync) package to prompt the user to enter specified command; the actions of those commands are kept memory in a state that is persisted until the script is terminated. A broad overview of the important parts of the application are below:
+The solution uses the [readline-sync](https://www.npmjs.com/package/readline-sync) package to prompt the user to enter specified command; the state of those commands are kept memory in a state that is persisted until the script is terminated.  A broad overview of the important parts of the application are below:
 
 - The entrypoint for development for this project is in [./src/main.ts](./src/main.ts).
 - Commands are located in [./lib/comamnds](./lib/commands). In order to add a new command, a new function should be built that implements the `CommandArgs` interface and added into [./src/main.ts](./src/main.ts).
-- Middlware is located in [./lib/middleware](./lib/middleware). More can be added to [./src/main.ts](./src/main.ts) but must implement the `MiddlewareTypes` interface.
+- Middlware is located in [./lib/middleware](./lib/middleware). Middleware is intended to run before commands are executed. More can be added to [./src/main.ts](./src/main.ts) but must implement the `MiddlewareTypes` interface.
 - Notifications are located in [./lib/notifications.ts](./lib/notifications.ts). These are lightweight and use console.log.
 
 ## 💾 Commands
