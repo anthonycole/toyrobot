@@ -30,7 +30,7 @@ The entrypoint for this project is in [./src/main.ts](./src/main.ts).
 
 The game can be configured by configuring the `config` object in [./src/config.ts](./src/config.ts). The options that can be configured are as follows:
 
-- `tableCells: { x: 5, y: 5 }` - set the number of cells on a table on x and y, default 5.
+- `tableCells: { x: 5, y: 5 }` - set the number of cells on the table's x and y plane, default 5.
 - `defaultCoordinates`: set the default `x`, `y`, and `orientation` coordinates - default `0`, `0`, `NORTH`
 - `promptText`: set the prompt character, default `>`
 
