@@ -33,4 +33,18 @@ describe('runMiddleware', () => {
     expect(middlewareFn).toHaveBeenCalledTimes(1);
     expect(commandFn).not.toHaveBeenCalled();
   });
+
+  it('should run the application without any middleware', () => {
+    const commandFn = jest.fn();
+
+    const state: State = { x: 0, y: 0, orientation: Orientation.NORTH, isRobotPlaced: false };
+
+    runMiddleware({
+      command: commandFn,
+      middleware: [],
+      state,
+    });
+
+    expect(commandFn).toHaveBeenCalled();
+  });
 });
