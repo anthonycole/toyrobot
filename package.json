@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "rollup -c",
-    "watch": "rollup -c --watch"
+    "develop": "nodemon ./src/main.ts",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",

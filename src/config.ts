@@ -8,7 +8,6 @@ export const config: ToyRobotConfig = {
     orientation: Orientation.NORTH,
   },
   promptText: '>',
-  defaultOrientation: Orientation.NORTH,
 };
 
 export const language = {
