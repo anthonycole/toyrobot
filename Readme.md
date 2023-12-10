@@ -1,40 +1,45 @@
-# Toy Robot
+# 🤖 Toy Robot
 
-This is a toy robot game written in Typescript as a response to a coding challenge.
+This is a toy robot game written in Typescript as a response to a coding challenge. It allows a robot to be placed on a table at a specified origin and moved unit by unit around in different directions (North, East, South, West), without falling off of that table.
 
-- It allows a robot to be placed and moved unit by unit around on a table in different directions (North, East, South, West)
-- It does not allow the robot to fall off of the table
+The solution uses the [readline-sync](https://www.npmjs.com/package/readline-sync) package to prompt the user to enter specified command; the actions of those commands are kept memory in a state that is persisted until the script is terminated. A broad overview of the important parts of the application are below:
 
-## 🖥️ Commands
+- The entrypoint for development for this project is in [./src/main.ts](./src/main.ts).
+- Commands are located in [./lib/comamnds](./lib/commands). In order to add a new command, a new function should be built that implements the `CommandArgs` interface and added into [./src/main.ts](./src/main.ts).
+- Middlware is located in [./lib/middleware](./lib/middleware). More can be added to [./src/main.ts](./src/main.ts) but must implement the `MiddlewareTypes` interface.
+- Notifications are located in [./lib/notifications.ts](./lib/notifications.ts). These are lightweight and use console.log.
 
-PLACE: Place the robot. Accepts input as per: x,y,l (x plane, y plane, direction). Required to move the robot.
+## 💾 Commands
+
+These are the commands that can be run on the appplication.
+
+PLACE: Place the robot. Accepts input as per: x,y,d (x plane, y plane, direction). Required to move the robot. Directions can be NORTH, SOUTH, EAST, or WEST
 LEFT: Move the robot direction left.
 RIGHT: Move the robot direction right
 MOVE: Move the robot one unit in the direction it is facing
 REPORT: Show the robots current coordinates.
 
-## 🖥️ Local Development
+## 👨‍💻 Local Development
 
 In order to develop this project locally, you must:
 
 - Clone this repository or download the source
 - Run `npm ci` to install all node packages
 - Run `npm run develop` to start nodemon for local development.
+- Run `npm run test` to run jest tests
 - Note: There is an issue with nodemon and `readline-sync` sometimes not recognising commands, see [here](https://stackoverflow.com/questions/53380499/node-readline-sync-module-enter-key-doesnt-consistently-function). If this happens again.
 
-We recommend using [nvm](https://github.com/nvm-sh/nvm) and ensuring that you're using the version of node in the `.nvmrc`
+It is recommendedd to use [nvm](https://github.com/nvm-sh/nvm) to ensure that you're using the version of node in the `.nvmrc`
 
 ## 🔧 Configuration
-
-The entrypoint for this project is in [./src/main.ts](./src/main.ts).
 
 The game can be configured by configuring the `config` object in [./src/config.ts](./src/config.ts). The options that can be configured are as follows:
 
 - `tableCells: { x: 5, y: 5 }` - set the number of cells on the table's x and y plane, default 5.
-- `defaultCoordinates`: set the default `x`, `y`, and `orientation` coordinates - default `0`, `0`, `NORTH`
-- `promptText`: set the prompt character, default `>`
+- `defaultCoordinates`: set the default `x`, `y`, and `orientation` coordinates - defaults to `0`, `0`, `NORTH`
+- `promptText`: set the prompt character, defaults to `>`
 
-## 🏗️ Building
+## 🏗️ Building / Usage
 
 In order to build this project successfully, you must:
 
@@ -45,7 +50,7 @@ In order to build this project successfully, you must:
 
 ## 🧪 Test Data
 
-The robot has been successfully manually tested against the following directions
+The robot has been successfully manually tested against the following set of instructions
 
 ```plain
 PLACE 0,0,NORTH
