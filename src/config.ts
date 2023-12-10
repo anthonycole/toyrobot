@@ -2,6 +2,11 @@ import { Orientation, ToyRobotConfig } from './types';
 
 export const config: ToyRobotConfig = {
   tableCells: { x: 5, y: 5 },
+  defaultCoordinates: {
+    x: 0,
+    y: 0,
+    orientation: Orientation.NORTH,
+  },
   promptText: '>',
   defaultOrientation: Orientation.NORTH,
 };

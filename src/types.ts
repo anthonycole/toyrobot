@@ -18,7 +18,11 @@ export interface State {
 export interface ToyRobotConfig {
   promptText: string;
   tableCells: { x: number; y: number };
-  defaultOrientation: Orientation;
+  defaultCoordinates: {
+    x: number;
+    y: number;
+    orientation: Orientation;
+  };
 }
 
 export enum TablePlaneDirection {

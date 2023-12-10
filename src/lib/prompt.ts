@@ -27,6 +27,6 @@ export const bootstrapPrompt = async (commands: ToyRobotCommandsInterface) => {
 
 export const prompt = async (commands: ToyRobotCommandsInterface) => {
   do {
-    bootstrapPrompt(commands);
+    await bootstrapPrompt(commands);
   } while (true);
 };
